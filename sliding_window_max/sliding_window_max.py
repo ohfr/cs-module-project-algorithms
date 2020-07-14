@@ -4,8 +4,18 @@ Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
     # Your code here
+    arr = []
+    i =0
+    while i < len(nums) - k+1:
+        curMax = -10000
+        for j in range(k):
+            if nums[j+i] > curMax:
+                curMax = nums[j+i]
+        arr.append(curMax)
+        curMax=0
+        i+=1
+    return arr
 
-    pass
 
 
 if __name__ == '__main__':
