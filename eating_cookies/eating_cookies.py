@@ -5,11 +5,18 @@ Returns: an integer
 '''
 def eating_cookies(n):
     # Your code here
-    if n <=1 :
-        return 1
-    temp = [n] * n
-    ways = list(permutations(temp, 3))
-    return len(ways)
+    temp = 0
+    res = [1]  
+      
+    for i in range(1, n + 1): 
+        s = i - 3 - 1
+        e = i - 1
+        if (s >= 0): 
+            temp -= res[s]  
+        temp += res[e]  
+        res.append(temp)  
+          
+    return res[n]  
     
 
 if __name__ == "__main__":
