@@ -4,8 +4,9 @@ import sys
 
 def rock_paper_scissors(n):
   # Your code here
+  plays = ['rock', 'paper', 'scissor']
+  
 
-  pass
 
 
 if __name__ == "__main__":

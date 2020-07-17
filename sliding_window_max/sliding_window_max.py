@@ -4,17 +4,27 @@ Returns: a List of integers
 '''
 def sliding_window_max(nums, k):
     # Your code here
-    arr = []
+    # this takes o(n) space
+    # arr = []
+    # i =0
+    # while i < len(nums) - k+1:
+    #     curMax = -10000
+    #     for j in range(k):
+    #         if nums[j+i] > curMax:
+    #             curMax = nums[j+i]
+    #     arr.append(curMax)
+    #     curMax=0
+    #     i+=1
+    # return arr
     i =0
     while i < len(nums) - k+1:
-        curMax = -10000
-        for j in range(k):
-            if nums[j+i] > curMax:
-                curMax = nums[j+i]
-        arr.append(curMax)
+        curMax = max(arr[i:k+i])
+        nums[i] = curMax
         curMax=0
         i+=1
-    return arr
+    while i < len(nums):
+        nums.pop(i)
+    return nums
 
 
 
