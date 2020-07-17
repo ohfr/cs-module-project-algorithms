@@ -7,7 +7,7 @@ def eating_cookies(n):
     # Your code here
     temp = 0
     res = [1]  
-      
+        
     for i in range(1, n + 1): 
         s = i - 3 - 1
         e = i - 1
@@ -15,8 +15,26 @@ def eating_cookies(n):
             temp -= res[s]  
         temp += res[e]  
         res.append(temp)  
-          
-    return res[n]  
+            
+    return res[n]
+
+    # if n < 0:
+    #     return 0
+    # if n ==0:
+    #     return 1
+    # ways = eating_cookies(n-1) + eating_cookies(n-2) + eating_cookies(n-3)
+    # return ways
+
+def eating_cookies_cache(n, cache):
+    if n < 0:
+        return 0
+    if n ==0 :
+        return 1
+    
+    if cache[n] > 0:
+        return cache[n]
+    ways = eating_cookies(n-1, cache) + eating_cookies(n-2, cache) + eating_cookies(n-3, cache)
+    return ways
     
 
 if __name__ == "__main__":

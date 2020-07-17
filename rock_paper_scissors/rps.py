@@ -6,7 +6,8 @@ def rock_paper_scissors(n):
   # Your code here
   plays = ['rock', 'paper', 'scissor']
   
-
+  if n == 1:
+    return [['rock'], ['paper'], ['scissor']]
 
 
 if __name__ == "__main__":
